@@ -2,7 +2,7 @@
 <html lang="en-GB">
 	<head>
 
-		<title>Magic of the Programming</title>
+		<title>Wonders of the Programming</title>
 		
 		<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -66,7 +66,7 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Magic of the Programming</h1>
+				<h1>Wonders of the Programming</h1>
 				<p>Get the knowledge of website creating </p>
 				<a href="" target="_blank" class="btn btn-info" role="button">Learn</a>
 			</div>
