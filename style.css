@@ -1,0 +1,102 @@
+body
+{
+	cursor: default;
+}
+
+p 
+{
+	text-align: justify;
+}
+
+a, a:hover, a:active
+{
+	
+	text-decoration: none;
+}
+
+.jumbotron
+{
+
+
+	color: white;
+	background: url('./images/hat-and-wand.png') center no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+.jumbotron p 
+{
+	text-align: center;
+}
+
+.jumbotron a
+{
+	margin-top: 1em;
+}
+
+nav ul
+{
+	font-family: Comic Sans MS;
+}
+
+nav ul
+{
+	list-style: none;
+}
+
+nav ul li
+{
+	margin-right: 2em;
+}
+
+.container h2, article h2
+{
+	text-align: center;
+}
+
+.colours {font-weight: 500;}
+
+.black {color: black;}
+.white  {background-color: black; color: white;}
+.red {color: red;}
+.orange {color: orange;}
+.yellow  {color: yellow;}
+.green {color: green;}
+.blue {color: blue;}
+.indigo {color: indigo;}
+.violet {color: violet;}
+.aqua {color: aqua;}
+.AliceBlue {color: AliceBlue;}
+.Bisque {color: Bisque;}
+.Coral {color: Coral;}
+.Teal {color: Teal;}
+.Pink {color: Pink;}
+.DeepPink {color: DeepPink;}
+.HotPink {color: HotPink;}
+
+.playground
+{
+	font-family: Comic Sans MS;
+}
+
+.quill
+{
+	font-family: 'Courier New';
+}
+
+footer
+{
+	margin-top: 2em;
+}
+
+footer ul
+{
+	text-align: center;
+	list-style: none;
+	margin-bottom: 3em;
+}
+footer ul li
+{
+	margin: 2em;
+	display: inline;
+}

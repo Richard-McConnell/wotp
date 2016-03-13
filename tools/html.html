@@ -1,0 +1,29 @@
+
+<div class="content">
+  <div class="container playground">
+      <h2>HTML playground</h2><br />
+      <script>
+        function update()
+        {document.getElementById("output-div").innerHTML = document.getElementById("input-area").value;}
+      </script>
+
+
+<center>
+    <table style="padding: 1em;" >
+      <tr>
+      	<td align="right" valign="top">Input: </td>
+      	<td><textarea id="input-area" onkeyup="update()" rows=10 cols=80></textarea></td>
+      </tr>
+      <tr height="200px">
+      	<td align="right" valign="top">Output:</td>
+      	<td valign="top"><div id="output-div" style="text-align: left"></div></td>
+      </tr>
+      <tr>
+      	<td colspan=2 align="center">
+      	</td>
+      </tr>
+    </table>
+</center>
+
+  </div>
+</div>

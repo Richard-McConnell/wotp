@@ -1,0 +1,173 @@
+			<div class="content">
+				<div class="container">
+					<article>
+					<h2>First lesson. HTML.</h2>
+					<p>
+						To start to write a web page you need a code editor. I'm using <a href="http://sublimetext.com/" target="_blank">Sublime Text</a>. It's cross platform. You can use for free for education purposes. Get this application and install.
+					</p>
+					<p>
+						Firstly, create a file "index.html". Web server is checking one of the first this filename. And if it will find a file with name "index", it will be displayed to visitor. It's working for URLs without specified filename, such as http://hol.org.uk/. In this link, you see that it has only domain name - "hol.org.uk". The main page in case of HOL will be index.php. You can try it yourself. Open the browser and type http://hol.org.uk/index.php. <kbd>Enter</kbd>
+					</p>
+					<p>
+						In our case, you need to find a class with <a href="http://global.britannica.com/technology/HTML" target="_blank"><abbr>HTML</abbr></a> pages. Open any other class. Open any page in this class. Then go to address line and change it: delete all text after domain name and "/" [slash character]. And add there "index.html". Go.
+					</p>
+					<p>
+						What do you see? In an ordinal way, if you correctly typed it, you will see main page of this class. And that why your main file should have name "index". Now, let's return to our index.html.
+					</p>
+					<p>
+						Secondly, you need to fill this file with correctly marked text. In this class we will use HTML5 and for that language first line of your page should be <code>&lt;!doctype html&gt;</code><kbd>Enter</kbd>. It says to browser in what language is written a page. Then goes tag <code>&lt;html&gt;</code><kbd>Enter</kbd>. This tag can contain information about language. For example, <code>&lt;html lang="en-GB"&gt;</code>. Most part of tags in the HTML language goes in pair - opening and closing tag. For this tag closing tag will be <code>&lt;/html&gt;</code>.
+					</p>
+					<p>
+						At that moment your code should be looks like this:<br />
+						<pre>
+							<code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;/html&gt;
+							</code>
+						</pre>
+					</p>
+					<p>
+							Now, make it like this:<br />
+						<pre>
+							<code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;!-- Change the title --&gt;
+		&lt;title&gt;The title of your amazing web page&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+							</code>
+						</pre>
+					</p>
+					<p>I do not appreciate using Copy-Paste. Type it yourself.</p>
+					<p>
+						As you see, there appeared a bit other paired tags. <code>&lt;head&gt;</code> - it's a meta part of page. Usually, in this tags you will write information about your page and where to take other code for page. You can set there charset, keywords, for search engine, tell here that you're author of this page and other staff. One of the tags of head is title tag. Where you can set title which will be appear on the tab of your browser. It's still being blank page and we going to change it. In tags <code>&lt;body&gt;&lt;/body&gt;</code> should be content which we wanna show to user. In tags <code>&lt;!-- --&gt;</code> I typed comment which tells you to change title of the page. Visitor of your page will not see comments on the page unless he will go to source code by using "Inspect" or "View Page Source". Note it and use it when you see very attractive thing and want to know how to do it or want to just get new knowledge.
+					</p>
+					<p>
+						 If you wanna to create a page, you, probably, have an information that you wanna share. HTML have a tags for it - <code>&lt;p&gt;&lt;/p&gt;</code> - paragraph. Type or put your text inside of these tags. Then we need to add a header for our text. You can choose any header tag from <code>&lt;h1&gt;&lt;/h1&gt;</code> to <code>&lt;h6&gt;&lt;/h6&gt;</code>. Put it before the paragraph.
+					</p>
+					<p>
+							Your page should be something about like this:<br />
+						<pre>
+							<code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;The title of your amazing web page&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;HOL.org.uk&lt;/h1&gt;
+		&lt;p&gt;HOL - it's a virtual school where you can learn a lot of interesting things.&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+							</code>
+						</pre>
+					</p>
+					<p>Let's add other staff.</p>
+					<p>Link to the school:
+						<pre>
+							<code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;The title of your amazing web page&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;HOL.org.uk&lt;/h1&gt;
+		&lt;p&gt;HOL - it's a virtual school where you can learn a lot of interesting things.&lt;/p&gt;
+		&lt;a href="http://hol.org.uk/"&gt;Link to the school&lt;/a&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+							</code>
+						</pre>
+					</p>
+
+					<p>
+						Add an image [<a href="http://hol.org.uk/promote.php" target="_blank">from HOL's promote page</a>]:
+						<code>&lt;img src="http://www.hol.org.uk/images/logos/hol_88_31.gif" /&gt;</code>.
+					</p>
+					<p>
+						Change link to image-link:
+						<code>&lt;a href="http://hol.org.uk/" target="_blank"&gt;&lt;img src="http://www.hol.org.uk/images/logos/hol_88_31.gif" /&gt;&lt;/a&gt;</code>. When you will click on the image, HOL page will be opened in new tab.
+					</p>
+					<p>
+					In tags of paragraph, you can add hint attribute. And this hint will be displayed when you will move you pointer to image or paragraph. <code>
+		&lt;p title="Text about HOL"&gt;HOL - it's a virtual school where you can learn a lot of interesting things.&lt;/p&gt;</code> and <code>&lt;img alt="Join HOL" title="Join HOL" src="http://www.hol.org.uk/images/logos/hol_88_31.gif" /&gt;</code>.
+					</p>
+					<p>
+						From this part of lesson I will tell you about tags without HOL examples. You'll need to put them to your homework.
+					</p>
+					<p>
+						<code>&lt;hr /&gt;</code> - horizontal rule.
+					</p>
+					<p>In <code>&lt;head&gt;</code> you can set charset of your page: <code>&lt;meta charset="utf-8"&gt;</code>.
+					</p>
+
+					<p>
+						Images can have <code>width</code> and <code>height</code> attributes, which you can set in pixels [<code>px</code>], percents [<code>%</code>], <code>em</code> and others. I recommend to use the only <code>em</code> and in all devices, your sizes will be set properly. Usually, people are using pixels. Only, small part of them understand all wisdom of using <code>em</code>. 
+					</p>
+					<p>
+						Sometimes, you need to put line break to your text. Use <code>&lt;br /&gt;</code> for it.
+					</p>
+					<p>
+						<code>&lt;pre&gt;&lt;/pre&gt;</code> shows preformatted text "as is". Without changes in output format.
+					</p>
+					<p>
+						Text selecting: bold<code>&lt;b&gt;</code>, italic<code>&lt;i&gt;</code>, strong<code>&lt;strong&gt;</code> and emphasized<code>&lt;em&gt;</code>. Always, close these tags: <code>&lt;em&gt;Emphasized text&lt;/em&gt;</code>.
+					</p>
+					<p>
+						Try these pair tags yourself: <code>&lt;small&gt;&lt;/small&gt;</code>, <code>&lt;mark&gt;&lt;/mark&gt;</code>, <code>&lt;ins&gt;&lt;/ins&gt;</code>, <code>&lt;sub&gt;&lt;/sub&gt;</code>, <code>&lt;sup&gt;&lt;/sup&gt;</code>. You can all use them inside of paragraph to accent text [to make <small>small</small> or <mark>mark text</mark>].
+					</p>
+					<p>In your page this output will look different because I have extra styling for the page.</p>
+					<p>
+						Short quote: <code>&lt;q&gt;&lt;/q&gt;</code>.<br /> 
+						Blockquote: <code>&lt;blockquote&gt;Happiness can be found, even in the darkest of times, if one only remembers to turn on the light. &lt;small&gt;J.K. Rowling, Harry Potter and Prisoner of Azkaban.&lt;/small&gt;&lt;/blockquote&gt;</code><br />
+						<blockquote>Happiness can be found, even in the darkest of times, if one only remembers to turn on the light. <small>J.K. Rowling, Harry Potter and Prisoner of Azkaban.</small></blockquote>
+						Computer code: <code>&lt;code&gt;&lt;/code&gt;</code> [use preformatted tag &lt;pre&gt; to wrap computer code].
+<pre>
+<code>
+&lt;pre&gt;
+	&lt;code&gt;
+	&amp;lt;!doctype html&amp;gt;
+		&amp;lt;html&amp;gt;
+			&amp;lt;head&amp;gt;
+				&amp;lt;title&amp;gt;The title of your amazing web page&amp;lt;/title&amp;gt;
+			&amp;lt;/head&amp;gt;
+			&amp;lt;body&amp;gt;
+			&amp;lt;/body&amp;gt;
+		&amp;lt;/html&amp;gt;
+	&lt;/code&gt;
+&lt;/pre&gt;
+</code>
+</pre>
+						You have seen it, it's one of the first code blocks.<br />
+						<pre>
+							<code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;The title of your amazing web page&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+							</code>
+						</pre>
+						Computer output: <code>&lt;samp&gt;&lt;/samp&gt;</code><br />
+						Variable: <code>&lt;var&gt;&lt;/var&gt;</code><br />
+						Keyboard input: <code>&lt;kbd&gt;Enter&lt;/kbd&gt;</code>.<kbd>Enter</kbd><br />
+					</p>
+				</article>
+					<p>
+						<ul class="pager">
+							<li class="page"><a href="#navbar">Top</a></li>
+							<li class="page"><a href="./?first-homework">Homework</a></li>
+							<li class="next"><a href="./?second-lesson">Next Lesson</a></li>
+						</ul>
+					</p>
+				</div>
+			</div>

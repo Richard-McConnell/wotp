@@ -1,0 +1,200 @@
+			<div class="content">
+				<div class="container">
+					<article>
+						<h2>Second lesson. Area, table and form.</h2>
+						<h3>Map and areas</h3>
+						<p>
+							Let's start from the <code>map</code> tag. That's really wonderful thing. You can create a clickable image with different links in specific areas. Look at this <a href="http://hol.org.uk/hogsmeade.php" target="_blank"> map from HOL</a>. It's clickable image, your browser go wherever you click.
+						</p>
+						<p>
+							To make this thing you need an image, coords of clickable things and three tags: <code>img</code>,<code>map</code> and <code>area</code>. Put the image to HTML page like this:
+						</p>
+							<pre><code>&lt;img src="the-image.png" alt="The Image" usemap="#image-map" /&gt;</code></pre>
+							<p>
+								Attribute <code>usemap</code> defines the map name which should use this image. We need to create this map. After that map should be defined by tag <code>map</code>:
+							</p>
+							<pre><code>&lt;map name="image-map"&gt;
+	 &lt;area shape="rect" coords="0,0,50,50" href="#" title="Rect Link"&gt;
+	 &lt;area shape="circle" coords="100,100,25,25" href="#"  title="Circle Link"&gt;
+	&lt;/map&gt;</code></pre>
+						<p>
+							Code up above describes the map with square and circle links. Square will be on left top of the image with width fifty pixels:
+						</p>
+						<center><img src="./images/square.png" usemap="#image-map" /></center>
+						<map name="image-map">
+						 <area shape="rect" coords="0,0,50,50" href="#" title="Rect Link">
+						 <area shape="circle" coords="100,100,25,25" href="#"  title="Circle Link">
+						</map>
+						<h3>Tables</h3>
+						<p>
+							Tables in HTML first time was used as design elemnt which was dividing pages at parts.
+						</p>
+						<p>
+							Table starts and ends with tags <code>&lt;table&gt;&lt;/table&gt;</code>. And should contain tags: <code>&lt;tr&gt;</code>[row] and <code>&lt;td&gt;</code>[column]. Here is table about some HTML tags:
+						</p>
+						<pre><code>&lt;table border="1"&gt;
+		&lt;tr&gt;
+			&lt;th&gt;tag&lt;/th&gt;
+			&lt;th&gt;attributes&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;p&lt;/td&gt;
+			&lt;td&gt;align&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;a&lt;/td&gt;
+			&lt;td&gt;href, title&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;img&lt;/td&gt;
+			&lt;td&gt;src, width, height, title&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;table&lt;/td&gt;
+			&lt;td&gt;border&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;td&lt;/td&gt;
+			&lt;td&gt;colspan, rowspan, align&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;</code></pre>
+							<center><table border="1" style="margin:2em">
+								<tr>
+									<th>tag</th>
+									<th>attribute[s]</th>
+								</tr>
+								<tr>
+									<td>p</td>
+									<td>align</td>
+								</tr>
+								<tr>
+									<td>a</td>
+									<td>href, title</td>
+								</tr>
+								<tr>
+									<td>img</td>
+									<td>src, width, height, title</td>
+								</tr>
+								<tr>
+									<td>table</td>
+									<td>border, width, height</td>
+								</tr>
+								<tr>
+									<td>td</td>
+									<td>colspan, rowspan, align</td>
+								</tr>
+							</table></center>
+							<p>
+								That how looks table without using style. You need to add here at least padding attribute.
+							</p>
+							<h3>Forms</h3>
+							<p>
+								Not many teachers are using forms in HOL classes, if to be honest I've seen no one. Programmers are using forms to gather information from visitors. You can wrap them to tables to make looks appropriate.
+							</p>
+							<pre><code>&lt;form method="POST" action=""&gt;
+							  Login: &lt;input type="text" name="login" /&gt; &lt;br /&gt;
+							  Password: &lt;input type="password" name="password" /&gt; &lt;br /&gt;
+							  &lt;input type="submit" name="submit" value="submit" /&gt;
+							&lt;/form&gt;</code></pre>
+							<form method="POST" action="" style="margin:2em">
+							  Login: <input type="text" name="login" /> <br />
+							  Password: <input type="password" name="password" /><br />
+							  <input type="submit" name="submit" value="submit" />
+							</form>
+							<p>
+								Here it is: login form. Now, let's wrap it to table:
+							</p>
+	<pre><code>&lt;form method="POST" action=""&gt;
+	&lt;table&gt;
+		&lt;tr&gt;
+	  		&lt;td&gt;Login: &lt;/td&gt;&lt;td&gt;&lt;input type="text" name="login" /&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+	  		&lt;td&gt;Password: &lt;/td&gt;&lt;td&gt;&lt;input type="password" name="password" /&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+	  		&lt;td colspan="2" align="right"&gt;&lt;input type="submit" name="submit" value="submit" /&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+	&lt;/form&gt;</code></pre>
+							<form method="POST" action="" style="margin:2em">
+							<table>
+							<tr>
+							  <td>Login: </td><td><input type="text" name="login" /></td>
+							</tr>
+							<tr>
+							  <td>Password: </td><td><input type="password" name="password" /></td>
+							</tr>
+							<tr>
+							  <td colspan="2" align="right"><input type="submit" name="submit" value="submit" /></td>
+							</tr>
+							</table>
+							</form>
+							<p>
+								Is it better than previous?
+							</p>
+							<p>
+								Form will be sent to a new tab if you provide this attribute and value: <code>target="_blank"</code>. You can add <code>select</code> element to your form if you need ask a choice.
+							</p>
+
+	<pre><code>&lt;form method="POST"&gt;
+	&lt;table&gt;
+	&lt;tr&gt;
+	  &lt;td&gt;Choose: &lt;/td&gt;
+	  &lt;td&gt;
+	    &lt;select&gt;
+	       &lt;option value="1"&gt;first homework&lt;/option&gt;
+	       &lt;option value="2"&gt;second homework&lt;/option&gt;
+	    &lt;/select&gt;
+	  &lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+	  &lt;td&gt;HOL ID: &lt;/td&gt;&lt;td&gt;&lt;input type="text" name="hol_id" /&gt;&lt;/td&gt;
+	&lt;tr&gt;
+	  &lt;td&gt;Link to Gist: &lt;/td&gt;&lt;td&gt;&lt;input type="text" name="gist" /&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+	  &lt;td colspan="2" align="right"&gt;&lt;input type="submit" name="submit" value="submit homework" /&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;/table&gt;
+	&lt;/form&gt;</code></pre>
+
+						<form method="POST" style="margin:2em">
+						<table>
+						<tr>
+						  <td>Choose: </td>
+						  <td>
+						    <select>
+						       <option value="1">first homework</option>
+						       <option value="2">second homework</option>
+						    </select>
+						  </td>
+						</tr>
+						<tr>
+						  <td>HOL ID: </td><td><input type="text" name="hol_id" /></td>
+						<tr>
+						  <td>Link to Gist: </td><td><input type="text" name="gist" /></td>
+						</tr>
+						<tr>
+						  <td colspan="2" align="right"><input type="submit" name="submit" value="submit homework" /></td>
+						</tr>
+						</table>
+						</form>
+						<p>
+							If you wanna make "second homework" selected add attribute <code>selected</code> without value to this option.
+						</p>
+						<p>
+							You can use element <code>&lt;textarea name="message" rows="5" cols="20"&gt;&lt;/textarea&gt;</code> in your form. Or <code>&lt;button&gt;&lt;/button&gt;</code>
+						</p>
+					</article>
+					<p>
+						<ul class="pager">
+							<li class="previous"><a href="./?first-lesson">Previos Lesson</a></li>
+							<li class="page"><a href="#navbar">Top</a></li>
+							<li class="page"><a href="./?second-homework">Homework</a></li>
+							<li class="next"><a href="./?third-lesson">Next Lesson</a></li>
+						</ul>
+					</p>
+
+				</div>
+			</div>

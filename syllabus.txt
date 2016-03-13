@@ -1,0 +1,57 @@
+
+
+First lesson: HTML
+Second lesson: HTML - tables and forms
+Third lesson: Styling
+Forth lesson: Styling II
+Fifth lesson: Bootstrap
+
+or
+
+First lesson: HTML
+Second lesson: HTML - tables and forms
+Third lesson: Styling
+Forth lesson: Bootstrap
+Fifth lesson: JS
+
+
+Homework: pages with using lesson’s programming language
+Extra works: Using extra tags from other sources [w3schools.com, codeacademy.com or thenewboston.com]
+
+Project: Make a page with using all languages in lessons.
+
+
+
+Menu:
+
+Home
+FAQ
+Lessons
+	first lesson
+	second lesson
+	third lesson
+	forth lesson
+	fifth lesson
+Homework
+	first homework
+	second homework
+	third homework
+	forth homework
+	fifth homework
+Project
+	Webpage about HOL
+Extra [homework with bootstrap and extra tags - both required]
+	first homework
+	second homework
+	third homework
+	forth homework
+	fifth homework
+
+Details:
+HTML lesson: main markup tags.
+HTML: area maps, tables and forms lesson.
+Styling: main CSS attributes
+Styling II: CCS3
+Bootstrap: navigation, jumbotron, containers, footer, list-group [lis-group-item active disabled], buttons, dropdown buttons,
+
+For your home work use images from freedigitalphotos.net.

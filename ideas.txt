@@ -1,0 +1,35 @@
+
+ideas:
+add alert for holidays with the cookie to do not repeat it.
+
+
+
+
+
+for lessons and homework make:
+<ul class=“pager”>
+	<li class=“previous”>Previous Lesson</li>
+	<li class=”next”>Homework</li>
+</ul>
+<ul class=“pager”>
+	<li class=“previous”>Previous Homework</li>
+	<li class=”next”>Next Lesson</li>
+</ul>
+From lesson you can get to previous lesson [if exists] or to homework.
+From homework you can get to previous homework or next lesson.
+
+footer:
+links to 
+HOL,
+w3schools,
+Code-academy
+
+One file homework to gist GitHub, inline CSS, images on hosting with short links. Make a php page to look this code. 300 lines maximum. If line count > 300 points_for_homework -= 10. If line count > 350 - doesn’t counts - you need send new homework with line count <= 300.
+
+
+points maximum you earn in this class - 300 [school ceil]. But in the class for award I count over points. 
+
+Awards.
+Creative Project
+Smart programmer - for maximum of points.
+
