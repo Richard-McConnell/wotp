@@ -22,12 +22,233 @@
 <p>
 	If you will use HEX or RGB I recommend you to find a colour picker, which will be convert chosen a colour to RGB or HEX.
 </p>
-<h3></h3>
+
+
+<h3>Division and span tags</h3>
+<p>
+	Before HTML5, usually, people were making a design by this tags. These are tags by which you can union your HTML code and give them style properties. By span tag [<code>span</code>] we are selecting/colouring characters and words. By divisions [<code>div</code>] - paragraphs and etc. That how will be designed pages by divisions:
+</p>
+<pre>
+<code>&lt;!-- html, head and body stuff are up above --&gt;
+&lt;div class="header"&gt;
+&lt;!-- Sign in, sign out forms and other things --&gt;
+&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;!-- Independent content --&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;
+Powered by &lt;span class="my-cute-style"&gt;me&lt;/span&gt;
+&lt;/div&gt;
+&lt;!-- closing body, html are down below --&gt;</code></pre>
+
+But it was old style and it should leave us. Now, people are using HTML5:
+<pre><code>&lt;!-- html, head and body stuff are up above --&gt;
+&lt;header&gt;
+&lt;!-- Sign in, sign out forms and other things --&gt;
+&lt;/header&gt;
+&lt;section&gt;
+&lt;-- Independent content --&gt;
+&lt;/section&gt;
+&lt;footer&gt;
+Powered by &lt;span class="my-cute-style"&gt;me&lt;/span&gt;
+&lt;/footer&gt;
+&lt;!-- closing body, html are down below --&gt;</code></pre>
 
 <h3>Selector</h3>
 <p>
-	To set any property of element of the page you need to say which one element. This part goes before curly braces and named as <b>selector</b>. In example from colours section you can see that in selector is <code>p</code>. You can set any displable tag in body. You can specify selectors by different ways. <code>div p { color: gray; }</code> - this line of code defined that all paragraphs of all divisions should be grey. If division has a table, where in column of this table paragraph and this paragraph will be grey. What if you need to set paragraphs which are only in division [not in tables, which are in division]? In this case you need this line of code with greater than symbol: <code>div > p {color: black;}</code>.
+	To set any property of an element of the page you need to say which one element. This part goes before curly braces and named as a <b>selector</b>.
 </p>
+<p>
+	<code><i>selector</i> { <i>attributes</i> }</code>
+</p>
+<p>
+	In the example from colours section, you can see that in the selector is <code>p</code>. You can set any displayable tag in a body. You can specify selectors by different ways. <code>div p {color: gray;}</code> - this line of code defined that all paragraphs of all divisions should be grey. If a division has a table, wherein column of this table paragraph and this paragraph will be grey. What if you need to set paragraphs which are only in the division [not in tables, which are in the division]? In this case, you need this line of code with "greater than" symbol: <code>div > p {color: black;}</code>.
+</p>
+<h5>Class</h5>
+<p>
+	You can define style class. For example, you need make few paragraphs, but not all, in one style. In this way, you're defining a class in style and writing in attribute <code>class</code> of these paragraphs name of that class.
+</p>
+<pre><code>.one-style-paragraph {color: gray;}</code></pre>
+<pre><code>&lt;p class="one-style-paragraph"&gt;Grey paragraph.&lt;/p&gt;
+&lt;p&gt;This paragraph is black.&lt;/p&gt;
+&lt;p class="one-style-paragraph"&gt;Another one grey paragraph.&lt;/p&gt;
+&lt;p&gt;Another black paragraph.&lt;/p&gt;
+&lt;p&gt;Etc.&lt;/p&gt;</code></pre>
+<h5>ID</h5>
+<p>
+	For any displayable element you can set <code>id</code> attribute - identity. And you can use it for styling and in scripts. To specify style for element with id you should put before id name hashtag/number symbol "#".
+</p>
+<pre><code>#one-paragraph {color: gray;}</code></pre>
+<pre><code>&lt;p id="one-paragraph"&gt;Grey paragraph.&lt;/p&gt;
+&lt;p&gt;This paragraph is black.&lt;/p&gt;
+&lt;p&gt;Another one black paragraph.&lt;/p&gt;</code></pre>
+<h3>Let's style it</h3>
+<p>
+	First of all - you can style your page by three [!] ways: external file, internal style and inline style.
+</p>
+<h5>External file</h5>
+<p>
+	<code>&lt;link  type="text/css" rel="stylesheet" href="your-style-file.css"&gt;</code>
+</p>
+<h5>Internal style</h5>
+<p>
+	You can put your style in <code>head</code> tags:
+	<pre><code>&lt;style&gt;
+	body {color: blue;}
+	h1 {color: orange;}
+	footer p {color: gray;}
+	.my-cute-style {font-size: .5em; color: pink; text-align: center;}
+&lt;style&gt;</code></pre>
+</p>
+<h5>Inline style</h5>
+<p>
+	Or set it in property <code>style</code>:
+	<pre><code>&lt;footer&gt;
+	&lt;p&gt;Powered by &lt;span class="my-cute-style"&gt;me&gt;&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+</p>
+
+<h5>Links</h5>
+<p>
+	Links are styling in another way. Of course, you can set it by this way: <code>a {color: orange;}</code>. But what if you need to set style when mouse over it or user pressed link?
+</p>
+<pre><code>a:link /* this is main style for all links */ <br />{background-color: blue; color: white;}
+a:visited /* this is style for visited links */ {color: gray;}
+a:hover /* mouse over link */ {background-color: lightblue;}
+a:active /* user pressed link */ {background-color: skyblue;}
+</code></pre>
+<p>
+	What means code up above? It sets links with blue background and white colours. If it will be visited link it will colour it to grey. When user will move mouse over link, it will be coloured with light blue background. When user will press mouse button, background colour will be changed to <code>skyblue</code>.
+</p>
+<h3>Style properties</h3>
+<p>
+	Before I will give you reference table I should tell you about value <code>inherit</code>. If you will set any style property to this value it will inherit this property from his parent tag. For example, you're setting the colour for paragraph and wrote that it has inherited colour property. If this paragraph in body, it will take colour from body, if this paragraph in column of table it will take from that column. <code>initial</code> is default value of property. For colour property it will be black.
+</p>
+<p>
+	You can specify image by url - <code>url("image.gif");</code>.
+</p>
+<table class="table table-striped">
+	<thead><caption>Reference table of style properties</caption></thead>
+	<tr>
+		<th>
+			property
+		</th>
+		<th>
+			description
+		</th>
+		<th>
+			example
+		</th>
+	</tr>
+	<tr>
+		<td><code>color</code></td>	
+		<td>Text colour</td>
+		<td><code>p {color: blue;}</code>
+		</td>
+	</tr>
+	<tr>
+		<td><code>background-color</code></td>	
+		<td>Background colour is applyable for most part of elements</td>
+		<td><code>div {background-color: lightgray;}</code><br />
+			<code>p {background-color: lightblue;}</code><br />
+			<code>a:hover {background-color: skyblue;}<br/>
+				a {background-color: blue; color: white;}</code>
+		</td>
+	</tr>
+	<tr>
+		<td><code>font-family</code></td>	
+		<td>Font setting of elements</td>
+		<td><code>body {font-family: Verdana;}<br /> p {font-family: Tahoma;}</code>
+		</td>
+	</tr>
+	<tr>
+		<td><code>font-size</code></td>	
+		<td>You can set font size in em, px and others.</td>
+		<td><code>p {font-size: 1em;}<br /> footer p {font-size: .8em;}</code></td>
+	</tr>
+	<tr>
+		<td><code>text-align</code></td>	
+		<td>Text aligning. Possible variations: left, right, center and justify. Last one is for text tags.</td>
+		<td><code>p {text-align: justify;}<br />p.quote {text-align: right; font-size: .8em;}</code></td>
+	</tr>
+	<tr>
+		<td><code>text-decoration</code></td>	
+		<td><code>underline</code> value of this property makes text with underline. It also can be <code>overline</code> or <code>none</code>.</td>
+		<td><code>a {text-decoration: none;} /* links without underline */</code></td>
+	</tr>
+	<tr>
+		<td><code>padding</code></td>
+		<td>Applicable to <code>body</code>, divisions, <code>table</code> columns, section tags of HTML5 [<code>header</code>, <code>section</code>, <code>article</code>...] and other tags of this kind. Makes a space between borders of this element and its content. Also, can be set through these properties: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.</td>
+		<td><code>table td {paddind: 1.2em;} <br />footer {padding-bottom: 2em;}</code></td>
+	</tr>
+	<tr>
+		<td><code>margin</code></td>	
+		<td>Makes a space between this element and its neighbours. Also, can be set through these properties: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>.</td>
+		<td><code>footer {margin-top: 3em;}</code></td>
+	</tr>
+	<tr>
+		<td><code>border</code></td>	
+		<td>Border can be also with postfixes: -top, -right, -bottom, -left. First part of value sets thickness of border, second type of border and last one - colour.</td>
+		<td><code>div.headline {border-bottom: .2em solid yellow;}<br />
+			nav {border: .2em dashed blue;}<br />footer {border: .2em dotted gray;}</code></td>
+	</tr>
+	<tr>
+		<td><code>height</code></td>	
+		<td>Height of the element.</td>
+		<td><code>footer {height: 5em;}</code></td>
+	</tr>
+	<tr>
+		<td><code>width</code></td>	
+		<td>Width of the element. You can also specify <code>max-width</code> and it won't grow after this value.</td>
+		<td><code>table.reference {width: 80%;}</code></td>
+	</tr>
+	<tr>
+		<td><code>border-collapse</code></td>	
+		<td>Collapsing of the borders. Possible values: <code>inherit</code>, <code>initial</code>, <code>collapse</code>, <code>separated</code>.
+		<td><code>table {border-collapse: collapse;} /* tables have one-line border */</code></td>
+	</tr>
+	<tr>
+		<td><code>list-style-type</code></td>	
+		<td>Style-type of list: <code>circle</code>, <code>disc</code>, <code>square</code>, <code>upper-roman</code>, <code>lower-roman</code>, <code>lower-alpha</code>, <code>none</code> and others [<a href="http://www.w3schools.com/cssref/pr_list-style-type.asp" target="_blank">look at W3Schools</a>].</td>
+		<td><code>article .recipe {list-style-type: lower-roman;}</code></td>
+	</tr>
+	<tr>
+		<td><code>list-style</code></td>	
+		<td>You can set here image for your list.</td>
+		<td><code>ul.recipe {list-style: url("cooking-element.gif");}</code></td>
+	</tr>
+	<tr>
+		<td><code>display</code></td>	
+		<td>Possible values: <code>inline</code>, <code>block</code>, <code>inline-block</code>, <code>none</code> and many others [<a href="http://www.w3schools.com/cssref/pr_class_display.asp" target="_blank">W3Schools</a>].</td>
+		<td><code>nav ul {display: inline; list-style-type: none;} /* usual lines of code for navigation */</code></td>
+	</tr>
+	<tr>
+		<td><code>background-image</code></td>	
+		<td>Background image of element.</td>
+		<td><code>div.headline {background-image: url("sky.gif");}</code></td>
+	</tr>
+	<tr>
+		<td><code>background-position</code></td>	
+		<td>top right, left bottom, center and others.</td>
+		<td><code></code></td>
+	</tr>
+	<tr>
+		<td><code>background-repeat</code></td>	
+		<td></td>
+		<td><code></code></td>
+	</tr>
+	<tr>
+		<td><code>background-attachment</code></td>	
+		<td>ce</td>
+		<td><code></code></td>
+	</tr>
+	<tr>
+		<td><code>background-repeat</code></td>	
+		<td>This and three previos properties can be set in one <code>background</code> property. <a href="http://www.w3schools.com/css/css3_backgrounds.asp" targer="_blank">Look W3Schools tutorial</a>.</td>
+		<td><code></code></td>
+	</tr>
+</table>
+
 					<!-- link, style, color, background-color, font-family, font-size, text-align, text-decoration, padding, margin, border, border-style [dotted solid none], a:link, :visited, :hover, height, width, border-collapse,  list-style [list add with type attribute],  -->
 
 
