@@ -133,7 +133,7 @@ a:active /* user pressed link */ {background-color: skyblue;}
 		<th>
 			property
 		</th>
-		<th>
+		<th width="30%">
 			description
 		</th>
 		<th>
@@ -200,7 +200,7 @@ a:active /* user pressed link */ {background-color: skyblue;}
 	<tr>
 		<td><code>width</code></td>	
 		<td>Width of the element. You can also specify <code>max-width</code> and it won't grow after this value.</td>
-		<td><code>table.reference {width: 80%;}</code></td>
+		<td><code>table.reference {width: 80%; max-width: 500em;}</code></td>
 	</tr>
 	<tr>
 		<td><code>border-collapse</code></td>	
@@ -214,7 +214,7 @@ a:active /* user pressed link */ {background-color: skyblue;}
 	</tr>
 	<tr>
 		<td><code>list-style</code></td>	
-		<td>You can set here image for your list.</td>
+		<td>You can set here image for your list and others values from previous property.</td>
 		<td><code>ul.recipe {list-style: url("cooking-element.gif");}</code></td>
 	</tr>
 	<tr>
@@ -229,36 +229,31 @@ a:active /* user pressed link */ {background-color: skyblue;}
 	</tr>
 	<tr>
 		<td><code>background-position</code></td>	
-		<td>top right, left bottom, center and others.</td>
-		<td><code></code></td>
+		<td>Position of image. Value can be <code>top right</code>, <code>left bottom</code>, <code>center</code> and others.</td>
+		<td><code>header img {background-position: center;}<br />footer img {background-position: left bottom;}</code></td>
 	</tr>
 	<tr>
 		<td><code>background-repeat</code></td>	
-		<td></td>
-		<td><code></code></td>
+		<td>Repeat background as tiles or turning it off. Possible values: <code>repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, <code>no-repeat</code>, <code>initial</code>, <code>inherit</code>.</td>
+		<td><code>body {background-image: url("body-background.png"); background-repeat: repeat;<br />nav {background-image: url("nav-background.png"); background-repeat: repeat-x;}}</code></td>
 	</tr>
 	<tr>
 		<td><code>background-attachment</code></td>	
-		<td>ce</td>
-		<td><code></code></td>
+		<td>Behaviour of an element during scrolling. Possible values: <code>fixed</code>, <code>scroll</code>, <code>local</code>, <code>initial</code>, <code>inherit</code>.</td>
+		<td><code>body {background-image: url("body-background.png"); background-attachment: fixed;}</code></td>
 	</tr>
 	<tr>
-		<td><code>background-repeat</code></td>	
-		<td>This and three previos properties can be set in one <code>background</code> property. <a href="http://www.w3schools.com/css/css3_backgrounds.asp" targer="_blank">Look W3Schools tutorial</a>.</td>
-		<td><code></code></td>
+		<td><code>background</code></td>	
+		<td>Previos image properties can be set in one <code>background</code> property. <a href="http://www.w3schools.com/css/css3_backgrounds.asp" targer="_blank">Look W3Schools tutorial</a>.</td>
+		<td><code>header {background: url("header-background.png") fixed no-repeat center;}</code></td>
 	</tr>
 </table>
 
 					<!-- link, style, color, background-color, font-family, font-size, text-align, text-decoration, padding, margin, border, border-style [dotted solid none], a:link, :visited, :hover, height, width, border-collapse,  list-style [list add with type attribute],  -->
 
-
 					<!-- background-color -image -repeat [repeat-x repeat-y no-repeat] -attachment -position[right top | left bottom | center | % | px px | etc], -->
 
-
-
-					<!-- tags: div, span, meta viewport, -->
-
-
+					<!-- tags: div, span, -->
 					<p>
 						<ul class="pager">
 							<li class="previous"><a href="./?second-lesson">Previos Lesson</a></li>
