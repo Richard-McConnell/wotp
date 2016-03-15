@@ -5,14 +5,63 @@
 		<title>Wonders of the Programming</title>
 		
 		<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="./bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./style.css">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta charset="utf-8">
 
+
+		<script language="javascript">
+			var selected_text = "";
+
+			function body_onkeyup(element, e)
+			{
+				e = e || event;
+				if(e.ctrlKey && e.keyCode == 13)
+				{
+					var correction = prompt('Propose correction of this text', selected_text);
+					var from = prompt('Please, enter your email:', "");
+					var xmlHttp = new XMLHttpRequest();
+					var result = 0;
+					xmlHttp.onreadystatechange = function()
+					{
+						if(xmlHttp.httpRequest == 4 && xmlHttp.status == 200)
+						{
+							result = 1;
+						}
+					}
+					var url = "./correction.php?onpage=" + window.location.href +  "&text_to_correct=" + selected_text + "&correction=" + correction + "&from=" + from;
+					// debug, delete later
+					if(e.altKey)
+					{
+						prompt('Text will be sent to this url:', url);
+					}
+					xmlHttp.open("POST", url, true);
+					// ten tries to send and exit
+					while(result >= -10)
+					{
+						if(result == 1)
+						{
+							break;
+						}
+						xmlHttp.send();
+					}
+					if(result == -11)
+					{
+						alert("Your correction is not sent. Please, send it again when your internet connection will be restored. Thank you.");
+					}
+				}
+			}
+
+			function save_selected_text()
+			{
+				selected_text = window.getSelection();
+			}
+
+		</script>
 	</head>
-	<body>
+	<body onkeyup="body_onkeyup(this, event)" onmouseup="save_selected_text()">
 			<nav id="navbar">
 				<div class="container">
 					<ul class="nav nav-pills">
