@@ -75,7 +75,7 @@
 										<li><a href="./?second-lesson">second lesson: html - area, table, form</a></li>
 										<li><a href="./?third-lesson">third lesson: styling</a></li>
 										<li><a href="./?fourth-lesson">fourth lesson: bootstrap</a></li>
-										<li><a href="./?fifth-lesson">fifth lesson: js</a></li>
+										<li><a href="./?fifth-lesson">fifth lesson: bootstrap II</a></li>
 									</ul>
 						</li>
 						<li class="dropdown">
@@ -88,7 +88,7 @@
 										<li><a href="./?fifth-homework">fifth homework</a></li>
 									</ul>
 						</li>
-						<li <? echo ($_SERVER['QUERY_STRING'] == 'extra')? ' class="active"' : '';?>><a href="./?extra">Extra</a></li>
+						<!--<li < ? echo ($_SERVER['QUERY_STRING'] == 'extra')? ' class="active"' : '';? >><a href="./?extra">Extra</a></li>-->
 						<!--<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown">Extra<span class="caret"></span></a>
 									<ul class="dropdown-menu">
