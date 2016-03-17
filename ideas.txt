@@ -3,8 +3,9 @@ ideas:
 add alert for holidays with the cookie to do not repeat it.
 
 
-
-
+fast load interface [load only changeable parts]
+big images to photo bucket.
+scripts inly from maxCDN.
 
 for lessons and homework make:
 <ul class=“pager”>

@@ -4,14 +4,29 @@
 
 		<title>Wonders of the Programming</title>
 		
-		<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="./bootstrap/js/bootstrap.min.js"></script>
+		<?php
+			// for official server loading of scripts from MAXCDN
+			if ($_SERVER['HTTP_HOST'] == '127.0.0.1')
+			{
+		?>	
+			<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+	    <script src="./jquery/jquery.min.js"></script>
+			<script src="./bootstrap/js/bootstrap.min.js"></script>
+		<?
+			} else {
+		?>
+			<!-- bootstrap css -->
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+			<!-- jquery lib -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+			<!-- bootstrap js -->
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>		
+		<?
+			}
+		?>
 		<link rel="stylesheet" type="text/css" href="./style.css">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta charset="utf-8">
-
-
 		<script language="javascript">
 			var selected_text = "";
 
@@ -21,36 +36,10 @@
 				if(e.ctrlKey && e.keyCode == 13)
 				{
 					var correction = prompt('Propose correction of this text', selected_text);
+					if(correction == false) return;
 					var from = prompt('Please, enter your email:', "");
-					var xmlHttp = new XMLHttpRequest();
-					var result = 0;
-					xmlHttp.onreadystatechange = function()
-					{
-						if(xmlHttp.httpRequest == 4 && xmlHttp.status == 200)
-						{
-							result = 1;
-						}
-					}
 					var url = "./correction.php?onpage=" + window.location.href +  "&text_to_correct=" + selected_text + "&correction=" + correction + "&from=" + from;
-					// debug, delete later
-					if(e.altKey)
-					{
-						prompt('Text will be sent to this url:', url);
-					}
-					xmlHttp.open("POST", url, true);
-					// ten tries to send and exit
-					while(result >= -10)
-					{
-						if(result == 1)
-						{
-							break;
-						}
-						xmlHttp.send();
-					}
-					if(result == -11)
-					{
-						alert("Your correction is not sent. Please, send it again when your internet connection will be restored. Thank you.");
-					}
+					$.ajax({method: "post", url: url, error: function(result){ alert("Your correction is not sent. Please, send it again when reason will be fixed. Thank you. Status: " + result.statusText);}});
 				}
 			}
 
@@ -59,53 +48,47 @@
 				selected_text = window.getSelection();
 			}
 
+			function open_page(page)
+			{
+					$.ajax({url: "./get.php?page=" + page, success: function(result){$("#content").html(result); window.scrollTo(0, 0)}});
+			}
+
 		</script>
 	</head>
 	<body onkeyup="body_onkeyup(this, event)" onmouseup="save_selected_text()">
 			<nav id="navbar">
 				<div class="container">
 					<ul class="nav nav-pills">
-						<li <? echo ($_SERVER['QUERY_STRING'] == '')? ' class="active"' : '';?>><a href="./index.php">Home</a></li>
-						<li <? echo ($_SERVER['QUERY_STRING'] == 'syllabus')? ' class="active"' : '';?>><a href="./?syllabus">Syllabus</a>
+						<li><a onclick="open_page('home')">Home</a></li>
+						<li <? echo ($_SERVER['QUERY_STRING'] == 'syllabus')? ' class="active"' : '';?>><a onclick="open_page('syllabus')">Syllabus</a>
 						<!-- lessons -->
-						<li class="dropdown"> <!--   -->
+						<li class="dropdown">
 								<a class="dropdown-toggle<? echo (strpos($_SERVER['QUERY_STRING'],'-lesson') > 0 )? ' btn btn-primary' : '';?>" data-toggle="dropdown">Lessons<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="./?first-lesson">first lesson: html</a></li>
-										<li><a href="./?second-lesson">second lesson: html - area, table, form</a></li>
-										<li><a href="./?third-lesson">third lesson: styling</a></li>
-										<li><a href="./?fourth-lesson">fourth lesson: bootstrap</a></li>
-										<li><a href="./?fifth-lesson">fifth lesson: bootstrap II</a></li>
+										<li><a onclick="open_page('first-lesson')">first lesson: html</a></li>
+										<li><a onclick="open_page('second-lesson')">second lesson: html - area, table, form</a></li>
+										<li><a onclick="open_page('third-lesson')">third lesson: styling</a></li>
+										<li><a onclick="open_page('fourth-lesson')">fourth lesson: bootstrap</a></li>
+										<li><a onclick="open_page('fifth-lesson')">fifth lesson: bootstrap II</a></li>
 									</ul>
 						</li>
 						<li class="dropdown">
 							<a class="dropdown-toggle<? echo (strpos($_SERVER['QUERY_STRING'],'-homework') > 0 )? ' btn btn-primary' : '';?>" data-toggle="dropdown">Homework<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="./?first-homework">first homework</a></li>
-										<li><a href="./?second-homework">second homework</a></li>
-										<li><a href="./?third-homework">third homework</a></li>
-										<li><a href="./?fourth-homework">fourth homework</a></li>
-										<li><a href="./?fifth-homework">fifth homework</a></li>
+										<li><a onclick="open_page('first-homework')">first homework</a></li>
+										<li><a onclick="open_page('second-homework')">second homework</a></li>
+										<li><a onclick="open_page('third-homework')">third homework</a></li>
+										<li><a onclick="open_page('fourth-homework')">fourth homework</a></li>
+										<li><a onclick="open_page('fifth-homework')">fifth homework</a></li>
 									</ul>
 						</li>
-						<!--<li < ? echo ($_SERVER['QUERY_STRING'] == 'extra')? ' class="active"' : '';? >><a href="./?extra">Extra</a></li>-->
-						<!--<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown">Extra<span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="./?first-extra-homework">first homework</a></li>
-										<li><a href="./?second-extra-homework">second homework</a></li>
-										<li><a href="./?third-extra-homework">third homework</a></li>
-										<li><a href="./?fourth-extra-homework">fourth homework</a></li>
-										<li><a href="./?fifth-extra-homework">fifth homework</a></li>
-									</ul>
-						</li>-->
-						<li <? echo ($_SERVER['QUERY_STRING'] == 'project')? ' class="active"' : '';?>><a href="./?project">Project</a></li>
-						<li <? echo ($_SERVER['QUERY_STRING'] == 'final-exam')? ' class="active"' : '';?>><a href="./?final-exam">Final Exam</a></li>
+						<li <? echo ($_SERVER['QUERY_STRING'] == 'project')? ' class="active"' : '';?>><a onclick="open_page('project')">Project</a></li>
+						<li <? echo ($_SERVER['QUERY_STRING'] == 'final-exam')? ' class="active"' : '';?>><a onclick="open_page('final-exam')">Final Exam</a></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle<? echo (strpos($_SERVER['QUERY_STRING'],'-playground') > 0 )? ' btn btn-primary' : '';?>" data-toggle="dropdown">Tools<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="./?html-playground">html playground</a></li>
-										<li><a href="./?js-playground">js playground</a></li>
+										<li><a onclick="open_page('./tools/html-playground')">html playground</a></li>
+										<li><a onclick="open_page('./tools/js-playground')">js playground</a></li>
 									</ul>
 						</li>
 					</ul>
@@ -117,6 +100,9 @@
 			<div class="container">
 				<h1>Wonders of the Programming</h1>
 				<p>Get the knowledge of website creating </p>
-				<a href="" target="_blank" class="btn btn-info" role="button">Learn</a>
+				<a onclick="open_page('first-lesson')" target="_blank" class="btn btn-info" role="button">Learn</a>
 			</div>
 		</div>
+
+		<section id="content">
+

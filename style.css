@@ -17,10 +17,8 @@ a, a:hover, a:active
 
 .jumbotron
 {
-
-
 	color: white;
-	background: url('./images/hat-and-wand.png') center no-repeat;
+	background: url('http://bit.ly/1RnT334') center no-repeat;
 	background-size: cover;
 	text-align: center;
 }
