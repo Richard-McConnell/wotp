@@ -1,36 +1,35 @@
 
-ideas:
-add alert for holidays with the cookie to do not repeat it.
 
 
-fast load interface [load only changeable parts]
-big images to photo bucket.
-scripts inly from maxCDN.
+look at proposals of correcting in cabinet
 
-for lessons and homework make:
-<ul class=“pager”>
-	<li class=“previous”>Previous Lesson</li>
-	<li class=”next”>Homework</li>
-</ul>
-<ul class=“pager”>
-	<li class=“previous”>Previous Homework</li>
-	<li class=”next”>Next Lesson</li>
-</ul>
-From lesson you can get to previous lesson [if exists] or to homework.
-From homework you can get to previous homework or next lesson.
+quiz at the end of lesson. Propose to read lesson again if result far from good.
 
-footer:
-links to 
-HOL,
-w3schools,
-Code-academy
+“ask teacher” form in the footer of the page.
 
-One file homework to gist GitHub, inline CSS, images on hosting with short links. Make a php page to look this code. 300 lines maximum. If line count > 300 points_for_homework -= 10. If line count > 350 - doesn’t counts - you need send new homework with line count <= 300.
+Form for sending homework.
 
 
-points maximum you earn in this class - 300 [school ceil]. But in the class for award I count over points. 
+
+add alert for holidays with the cookie to do not repeat it if shown today to this user.
+
+homework: make web page from picture.
+
+add to menu:
+Links: to services
+Doors: HOL, teacher’s cabinet [] 
+Window: text from hour of the day and the end: “I need your attention. Think about lesson.”
+About: 
+
+
+Before we will start the lesson, try to think about what useful and lawful thing you wanna make.
+
+Add articles [meta tag].
 
 Awards.
 Creative Project
 Smart programmer - for maximum of points.
+
+
+
 

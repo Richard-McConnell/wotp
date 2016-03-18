@@ -7,13 +7,17 @@
 		'third-lesson', /*'third-homework', 
 		'fourth-lesson', 'fourth-homework', 
 		'fifth-lesson', 'fifth-homework', */
-		'home', './tools/html-playground', './tools/js-playground'
+		'home', './tools/html-playground', './tools/js-playground',
+		'cabinet-of-teacher', 'links'
 		);
+
 
 	if ( isset($_REQUEST['page'])
 		and in_array($_REQUEST['page'], $items))
 	{
-		require $_REQUEST['page'] . '.html';
+		if( !(strpos($_REQUEST['page'], '.php') > 0) )
+			$_REQUEST['page'] .= '.html';
+		require $_REQUEST['page'];
 	}
 
 ?>

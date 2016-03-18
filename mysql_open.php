@@ -4,8 +4,8 @@
 	$login = 'wonderso_php';
 	$pswd = 'MysqlPswdForPhp16]';
 	
-	$connection = mysqli_connect($server, $login, $pswd);
-  	mysqli_select_db($connection, $database);
+	$connection = @mysqli_connect($server, $login, $pswd);
+  mysqli_select_db($connection, $database);
   
   	$GLOBALS['pdo'] = new PDO("mysql:host=$server;dbname=$database", $login, $pswd);
   	

@@ -9,7 +9,7 @@ p
 	text-align: justify;
 }
 
-a, a:hover, a:active
+a, a:hover, a:active, a:link, a:visited
 {
 	
 	text-decoration: none;

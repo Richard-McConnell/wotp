@@ -1,3 +1,7 @@
+<!--
+Do not watch at eyes at people you do not know.
+Do not talk with people you do not know.
+-->
 <!doctype html>
 <html lang="en-GB">
 	<head>
@@ -29,7 +33,7 @@
 		<meta charset="utf-8">
 		<script language="javascript">
 			var selected_text = "";
-
+			var nav_page = 'home';
 			function body_onkeyup(element, e)
 			{
 				e = e || event;
@@ -38,7 +42,7 @@
 					var correction = prompt('Propose correction of this text', selected_text);
 					if(correction == false) return;
 					var from = prompt('Please, enter your email:', "");
-					var url = "./correction.php?onpage=" + window.location.href +  "&text_to_correct=" + selected_text + "&correction=" + correction + "&from=" + from;
+					var url = "./correction.php?onpage=" + nav_page +  "&text_to_correct=" + selected_text + "&correction=" + correction + "&from=" + from;
 					$.ajax({method: "post", url: url, error: function(result){ alert("Your correction is not sent. Please, send it again when reason will be fixed. Thank you. Status: " + result.statusText);}});
 				}
 			}
@@ -50,7 +54,7 @@
 
 			function open_page(page)
 			{
-					$.ajax({url: "./get.php?page=" + page, success: function(result){$("#content").html(result); window.scrollTo(0, 0)}});
+					$.ajax({url: "./get.php?page=" + page, success: function(result){$("#content").html(result); window.scrollTo(0, 0); nav_page = page;}});
 			}
 
 		</script>
@@ -60,10 +64,10 @@
 				<div class="container">
 					<ul class="nav nav-pills">
 						<li><a onclick="open_page('home')">Home</a></li>
-						<li <? echo ($_SERVER['QUERY_STRING'] == 'syllabus')? ' class="active"' : '';?>><a onclick="open_page('syllabus')">Syllabus</a>
+						<li><a onclick="open_page('syllabus')">Syllabus</a>
 						<!-- lessons -->
 						<li class="dropdown">
-								<a class="dropdown-toggle<? echo (strpos($_SERVER['QUERY_STRING'],'-lesson') > 0 )? ' btn btn-primary' : '';?>" data-toggle="dropdown">Lessons<span class="caret"></span></a>
+								<a class="dropdown-toggle" data-toggle="dropdown">Lessons<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a onclick="open_page('first-lesson')">first lesson: html</a></li>
 										<li><a onclick="open_page('second-lesson')">second lesson: html - area, table, form</a></li>
@@ -73,7 +77,7 @@
 									</ul>
 						</li>
 						<li class="dropdown">
-							<a class="dropdown-toggle<? echo (strpos($_SERVER['QUERY_STRING'],'-homework') > 0 )? ' btn btn-primary' : '';?>" data-toggle="dropdown">Homework<span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown">Homework<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a onclick="open_page('first-homework')">first homework</a></li>
 										<li><a onclick="open_page('second-homework')">second homework</a></li>
@@ -82,15 +86,17 @@
 										<li><a onclick="open_page('fifth-homework')">fifth homework</a></li>
 									</ul>
 						</li>
-						<li <? echo ($_SERVER['QUERY_STRING'] == 'project')? ' class="active"' : '';?>><a onclick="open_page('project')">Project</a></li>
-						<li <? echo ($_SERVER['QUERY_STRING'] == 'final-exam')? ' class="active"' : '';?>><a onclick="open_page('final-exam')">Final Exam</a></li>
+						<li><a onclick="open_page('project')">Project</a></li>
 						<li class="dropdown">
-							<a class="dropdown-toggle<? echo (strpos($_SERVER['QUERY_STRING'],'-playground') > 0 )? ' btn btn-primary' : '';?>" data-toggle="dropdown">Tools<span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown">Tools<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a onclick="open_page('./tools/html-playground')">html playground</a></li>
 										<li><a onclick="open_page('./tools/js-playground')">js playground</a></li>
 									</ul>
 						</li>
+						<li><a onclick="open_page('final-exam')">Final Exam</a></li>
+						<!--<li><a onclick="open_page('cabinet-of-teacher')">Teacher's Cabinet</a></li>-->
+						<li><a onclick="open_page('links')">Links</a></li>
 					</ul>
 					
 				</div>
