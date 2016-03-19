@@ -7,6 +7,7 @@
 		'third-lesson', /*'third-homework', 
 		'fourth-lesson', 'fourth-homework', 
 		'fifth-lesson', 'fifth-homework', */
+		'js',
 		'home', './tools/html-playground', './tools/js-playground',
 		'cabinet-of-teacher', 'links'
 		);

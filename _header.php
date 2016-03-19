@@ -57,9 +57,24 @@ Do not talk with people you do not know.
 
 			function open_page(page)
 			{
-					$.ajax({url: "./get.php?page=" + page, success: function(result){$("#content").html(result); window.scrollTo(0, 0); nav_page = page;}});
+					$.ajax({url: "./get.php?page=" + page, success: function(result){$("#content").html(result); window.scrollTo(0, 0); nav_page = page; var d = new Date(); d.setTime(d.getTime() + (3600*24*365)); document.cookie = 'nav_page=' + page + '; expires=' + d.toUTCString();}});
 			}
-			$(document).ready(function(){open_page('home');});
+
+			function get_cookie(cookie_name)
+			{
+				var cookies = document.cookie.split(';');
+				for (index in cookies)
+				{
+					if (cookies[index].substr(0,9) == cookie_name + '=')
+					{
+						var result = cookies[index].split('=');
+						return result[1];
+					}
+				}
+				return null;
+			}
+
+			$(document).ready(function(){nav_page = get_cookie('nav_page'); if ( nav_page === null) open_page('home'); else open_page(nav_page);});
 		</script>
 	</head>
 	<body onkeyup="body_onkeyup(this, event)" onmouseup="save_selected_text()">
@@ -72,11 +87,17 @@ Do not talk with people you do not know.
 						<li class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown">Lessons<span class="caret"></span></a>
 									<ul class="dropdown-menu">
+										<li>Term I</li>
 										<li><a onclick="open_page('first-lesson')">first lesson: html</a></li>
 										<li><a onclick="open_page('second-lesson')">second lesson: html - area, table, form</a></li>
 										<li><a onclick="open_page('third-lesson')">third lesson: styling</a></li>
 										<li><a onclick="open_page('fourth-lesson')">fourth lesson: bootstrap</a></li>
 										<li><a onclick="open_page('fifth-lesson')">fifth lesson: bootstrap II</a></li>
+										<!--<li>Term II</li>
+										<li><a onclick="open_page('js')">first lesson: js</a></li>
+										<li><a onclick="open_page('js')">second lesson: jquery</a></li>
+										<li><a onclick="open_page('php')">third lesson: php</a></li>
+										<li><a onclick="open_page('js')">fourth lesson: sql</a></li>-->
 									</ul>
 						</li>
 						<li class="dropdown">
