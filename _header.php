@@ -5,9 +5,10 @@ Do not talk with people you do not know.
 <!doctype html>
 <html lang="en-GB">
 	<head>
-
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta http-quiv="X-UA-Compatible" content="IE-edge">
 		<title>Wonders of the Programming</title>
-		
 		<?php
 			// for official server loading of scripts from MAXCDN
 			if ($_SERVER['HTTP_HOST'] == '127.0.0.1')
@@ -20,17 +21,19 @@ Do not talk with people you do not know.
 			} else {
 		?>
 			<!-- bootstrap css -->
-			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 			<!-- jquery lib -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 			<!-- bootstrap js -->
-			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>		
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<?
 			}
 		?>
+		<!-- [if lt IE 9] -->
+		<srcipt src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<srcipt src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<!-- [endif] -->
 		<link rel="stylesheet" type="text/css" href="./style.css">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta charset="utf-8">
 		<script language="javascript">
 			var selected_text = "";
 			var nav_page = 'home';
@@ -56,11 +59,11 @@ Do not talk with people you do not know.
 			{
 					$.ajax({url: "./get.php?page=" + page, success: function(result){$("#content").html(result); window.scrollTo(0, 0); nav_page = page;}});
 			}
-
+			$(document).ready(function(){open_page('home');});
 		</script>
 	</head>
 	<body onkeyup="body_onkeyup(this, event)" onmouseup="save_selected_text()">
-			<nav id="navbar">
+			<navbar id="navbar">
 				<div class="container">
 					<ul class="nav nav-pills">
 						<li><a onclick="open_page('home')">Home</a></li>
@@ -100,7 +103,7 @@ Do not talk with people you do not know.
 					</ul>
 					
 				</div>
-			</nav>
+			</navbar>
 
 		<div class="jumbotron">
 			<div class="container">

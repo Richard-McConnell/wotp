@@ -14,6 +14,7 @@
 						<li><a href="http://stackoverflow.com/" target="_blank" title="StackOverflow">StackOverflow</a></li>
 						<li><a href="http://Bit.ly/" target="_blank" title="URL Shortener and Link Management Platform">Bit.ly</a></li>
 						<li><a href="http://gist.github.com/" target="_blank" title="Gist GitHub: Create a new Gist">Gist GitHub</a></li>
+						<li><a href="http://hostmedia.co.uk/" target="_blank" title="HostMedia Hosting With Free Option">HostMedia</a></li>
 					</ul>
 				</div>
 		</footer>
